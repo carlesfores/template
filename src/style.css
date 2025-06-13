@@ -1,0 +1,58 @@
+html, body {
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+  background-color: #1e2a38;
+}
+
+#app {
+  height: 100%;
+}
+
+h1 {
+  color: #982655;
+  font-size: 32px;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-family: "Playfair Display", serif;
+}
+
+h2 {
+  color: #982655;
+  font-size: 32px;
+  font-weight: 600;
+  font-style: normal;
+  font-family: "Playfair Display", serif;
+}
+
+h3 {
+  font-size: 20px;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+.font-size-22 {
+  font-size: 22px;
+}
+
+.content-padding {
+  padding: 32px 0px;
+}
+
+.margin-bottom-8 {
+  margin-bottom: 8px;
+}
+
+.margin-bottom-16 {
+  margin-bottom: 16px;
+}
+
+.margin-bottom-32 {
+  margin-bottom: 16px;
+}
