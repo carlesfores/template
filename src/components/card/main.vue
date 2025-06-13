@@ -35,6 +35,10 @@ const props = defineProps({
     max-width: 1256px;
     font-weight: 600;
     margin-bottom: 16px;
+
+    @media only screen and (max-width : 900px) {
+      margin-bottom: 8px;
+    }
   }
 
   &__content {
