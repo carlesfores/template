@@ -110,7 +110,7 @@ const handleAction = (action) => {
         </div>
 
         <div v-if="item.type === 'lang'" class="menu__contact">
-          <div class="menu__item-label menu-link" >
+          <div class="menu__item-label menu-link" :class="{'menu__item-label--active': lang === item.action}">
             {{ item.label }}
           </div>
           <div class="menu__item-icon" :class="{'menu__item-icon--active': lang === item.action}">
@@ -169,6 +169,10 @@ const handleAction = (action) => {
     text-align: end;
     align-items: center;
     padding-right: 16px;
+  }
+
+  &__item-label--active {
+    font-weight: 700;
   }
 
   &__item-icon {
