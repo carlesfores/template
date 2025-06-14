@@ -1,5 +1,10 @@
 <script setup>
 
+import { ref } from 'vue';
+
+
+const lang = ref('es')
+
 const menu = [
   {
     type: 'title',
@@ -33,13 +38,13 @@ const menu = [
   {
     type: 'lang',
     label: 'Castellano',
-    action: 'lang-es',
+    action: 'es',
     icon: 'language',
   },
   {
     type: 'lang',
     label: 'Catalán',
-    action: 'lang-cat',
+    action: 'cat',
     icon: 'language',
   },
 ];
@@ -59,11 +64,11 @@ const handleAction = (action) => {
     window.location.href = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13905.000448573477!2d1.426646993877053!3d41.15838387146715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f17d1a85f259%3A0x8d3f2470c6b2ca83!2sN-340%2C%201180%2C%2043839%20Creixell%2C%20Tarragona!5e0!3m2!1ses!2ses!4v1749722785792!5m2!1ses!2ses";
   }
 
-  if (action === "lang-es") {
+  if (action === "es") {
 
   }
 
-  if (action === "lang-cat") {
+  if (action === "cat") {
 
   }
 
@@ -108,7 +113,7 @@ const handleAction = (action) => {
           <div class="menu__item-label menu-link" >
             {{ item.label }}
           </div>
-          <div class="menu__item-icon">
+          <div class="menu__item-icon" :class="{'menu__item-icon--active': lang === item.action}">
             <font-awesome-icon class="icon" :icon="item.icon" />
           </div>
         </div>
@@ -147,6 +152,7 @@ const handleAction = (action) => {
     color: #fff;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #fff;
   }
 
 
@@ -156,12 +162,6 @@ const handleAction = (action) => {
     color: #fff;
     cursor: pointer;
   }
-
-  &__item--active {
-      font-weight: 600;
-      background-color: #394f6a;
-  }
-
 
   &__item-label {
     display: flex;
@@ -180,11 +180,15 @@ const handleAction = (action) => {
 
     border-right: 1px solid #fff;
     border-left: 1px solid #fff;
-    border-top: 1px solid #fff;
   }
 
   &__item-icon:last-child {
     border-bottom: 1px solid #fff;
+  }
+
+  &__item-icon--active {
+    font-weight: 600;
+    background-color: #394f6a;
   }
 
 

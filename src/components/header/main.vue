@@ -37,7 +37,7 @@ const onClick = () => {
     gap: 12px;
     align-items: center;
     padding: 0px 16px;
-    color: #394f6a;
+    color: #1e2a38;
     font-size: 22px;
   }
 

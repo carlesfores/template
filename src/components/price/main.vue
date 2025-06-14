@@ -39,7 +39,6 @@ const props = defineProps({
   display: grid;
   grid-template-columns: 3fr 1fr;
   border-bottom: 1px solid #54749c;
-  max-width: 800px;
   width: 100%;
 
   &__detail {
