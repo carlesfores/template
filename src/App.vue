@@ -105,7 +105,10 @@ const prices = [
         
         <card type="secondary">
           <div class="font-size-20">
-            ¿Necesita asesoría o representación legal? <br><br><span class="home-link" @click="openMenu">Contáctenos </span>hoy mismo y reciba atención profesional y personalizada.
+            ¿Necesita asesoría o representación legal?
+            <span class="home-link" @click="openMenu">Contáctenos </span>
+            <br><br> 
+            Hoy mismo y reciba atención profesional y personalizada.
           </div>
         </card>
 
@@ -171,7 +174,7 @@ const prices = [
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    max-width: 1256px;
+    max-width: 980px;
     align-self: center;
     padding: 32px 0px;
 
@@ -194,7 +197,7 @@ const prices = [
     color: #D4AF37;
     font-size: 32px;
     margin-bottom: 16px;
-    font-family: "Playfair Display", serif;
+    // font-family: "Playfair Display", serif;
   }
   &__subtitle {
     font-size: 20px;

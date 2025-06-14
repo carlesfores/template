@@ -145,7 +145,7 @@ const handleAction = (action) => {
   }
 
   &__title {
-    font-family: "Playfair Display", serif;
+    // font-family: "Playfair Display", serif;
     flex: 1;
     font-size: 28px;
     padding: 16px 8px;

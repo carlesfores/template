@@ -41,7 +41,7 @@ const props = defineProps({
     flex-direction: column;
     gap: 32px;
     width: 100%;
-    max-width: 1024px;
+    max-width: 980px;
     align-self: center;
   }
 

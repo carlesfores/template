@@ -15,7 +15,7 @@ const onClick = () => {
 <template>
   <div class="header">
     <div class="header__logo">
-      <font-awesome-icon class="icon" icon="ghost" /><h2>Estrategia Legal</h2>
+      <h2>Estrategia Legal</h2>
     </div>
     <div class="header__item" @click="onClick">
       <font-awesome-icon v-if="isVisible" class="icon" icon="xmark" />
