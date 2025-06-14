@@ -44,10 +44,10 @@ const props = defineProps({
     height: 36px;
     justify-content: start;
     align-items: center;
-    color: #982655;
+    color: #54749c;
     padding-left: 8px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 

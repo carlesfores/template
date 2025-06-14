@@ -38,7 +38,7 @@ const props = defineProps({
 .price {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  border-bottom: 1px solid #982655;
+  border-bottom: 1px solid #54749c;
   max-width: 800px;
   width: 100%;
 
@@ -46,12 +46,12 @@ const props = defineProps({
   }
 
   &__label {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
   }
 
   &__sub-detail {
-    color: #982655;
+    color: #54749c;
     margin-top: 8px;
     margin-bottom: 16px;
     font-weight: 200;
@@ -61,7 +61,7 @@ const props = defineProps({
   &__value {
     font-weight: 400;
     text-align: end;
-    color: #982655;
+    color: #54749c;
   }
 
   &:last-child {

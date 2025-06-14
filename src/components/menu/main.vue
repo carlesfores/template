@@ -1,41 +1,48 @@
 <script setup>
 
-const menuSections = [{
-  title: "Contacto",
-  items: [{
+const menu = [
+  {
+    type: 'title',
+    label: "Contacto",
+  },
+  {
+    type: 'contact',
     label: '663 138 241',
     action: 'phone',
     icon: 'phone',
-    classes: 'type'
-  },{
+  },
+  {
+    type: 'contact',
     label: 'mateosadvocat@gmail.com',
     action: 'mail',
     icon: 'envelope',
-    classes: 'type'
-  },{
-    map: true,
+  },
+  {
+    type: 'contact',
     label: 'Carretera Nacional 340 Km. 1.180 Torredembarra',
     action: 'maps',
-    url: '',
     icon: 'location-dot',
-    classes: 'type'
-  }
-]
-}, {
-title: "Idioma",
-  items: [{
+  },
+  {
+    type: 'map'
+  },
+  {
+    type: 'title',
+    label: "Idioma",
+  },
+  {
+    type: 'lang',
     label: 'Castellano',
     action: 'lang-es',
     icon: 'language',
-    classes: 'type',
-    active: true
-  },{
+  },
+  {
+    type: 'lang',
     label: 'Catalán',
     action: 'lang-cat',
     icon: 'language',
-    classes: 'type'
-  }]
-}];
+  },
+];
 
 
 const handleAction = (action) => {
@@ -66,45 +73,47 @@ const handleAction = (action) => {
 
 <template>
   <div class="menu">
+
     <div 
-      v-for="(section, index) in menuSections"
+      v-for="(item, index) in menu"
       :key="index"
       class="menu__row"
       >
-        <div class="menu__title">
-            {{ section.title }}
+
+        <div v-if="item.type === 'title'" class="menu__title">
+          {{ item.label }}
         </div>
-        <div 
-          v-for="(item, index) in section.items"
-          :key="index"
-          :class="{'menu__item--active': item.active}"
-          class="menu__item"
-        > 
-          <div 
-            v-if="!item.map" 
-            class="menu__item-label menu-link" 
-            @click="handleAction(item.action)"
-            >
-              {{ item.label }}
-          </div>
 
-          <div v-if="item.map" class="menu__item-label-map">
-            <div>{{ item.label }}</div>
-            <iframe 
-              class="map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13905.000448573477!2d1.426646993877053!3d41.15838387146715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f17d1a85f259%3A0x8d3f2470c6b2ca83!2sN-340%2C%201180%2C%2043839%20Creixell%2C%20Tarragona!5e0!3m2!1ses!2ses!4v1749722785792!5m2!1ses!2ses" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+        <div v-if="item.type === 'contact'" class="menu__contact">
+          <div class="menu__item-label menu-link" >
+            {{ item.label }}
           </div>
+          <div class="menu__item-icon">
+            <font-awesome-icon class="icon" :icon="item.icon" />
+          </div>
+        </div>
 
+        <div v-if="item.type === 'map'" class="menu__map">
+          <iframe 
+            class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13905.000448573477!2d1.426646993877053!3d41.15838387146715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f17d1a85f259%3A0x8d3f2470c6b2ca83!2sN-340%2C%201180%2C%2043839%20Creixell%2C%20Tarragona!5e0!3m2!1ses!2ses!4v1749722785792!5m2!1ses!2ses" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div v-if="item.type === 'lang'" class="menu__contact">
+          <div class="menu__item-label menu-link" >
+            {{ item.label }}
+          </div>
           <div class="menu__item-icon">
             <font-awesome-icon class="icon" :icon="item.icon" />
           </div>
         </div>
     </div>
+
   </div>
 </template>
 
@@ -118,10 +127,16 @@ const handleAction = (action) => {
   position: absolute;
   background-color: #1e2a38;
   z-index: 7777;
+  padding-bottom: 33px;
+  margin-bottom: 33px;
 
   &__row {
     display: flex;
     flex-direction: column;
+  }
+
+  &__row:last-child {
+    padding-bottom: 40px;
   }
 
   &__title {
@@ -156,23 +171,6 @@ const handleAction = (action) => {
     padding-right: 16px;
   }
 
-
-  &__item-label-map {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: end;
-    padding: 16px 32px;
-    gap: 32px;
-    text-align: end;
-
-    .map {
-      width: 100%;
-      height: 450px;
-    }
-
-  }
-
   &__item-icon {
     display: flex;
     justify-content: center;
@@ -189,17 +187,49 @@ const handleAction = (action) => {
     border-bottom: 1px solid #fff;
   }
 
+
+  &__item-label-map {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    padding: 16px 32px;
+    gap: 32px;
+    text-align: end;
+
+    .map {
+      width: 100%;
+      height: 450px;
+    }
+  }
+
+  &__contact {
+    display: grid;
+    grid-template-columns: 1fr 48px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__map {
+    margin: 16px 0px;
+    .map {
+      width: 100%;
+      height: 450px;
+    }
+  }
+
+  &__lang {
+    display: grid;
+    grid-template-columns: 1fr 48px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+
+
   .menu-link {
     cursor: pointer;
     padding-right: 32px;
-  }
-
-  &__item:hover {
-
-    .menu__item-icon {
-      background-color: #394f6a;
-
-    }
   }
 
 

@@ -54,16 +54,14 @@ const prices = [
     label: "Burofax",
     amount: "150 €",
     details: [
-      "(1) Tarifa por página.",
-      "(2) Tarifa por página. Incluye redacción y gestión del envío."
+      "Tarifa por página. Incluye redacción y gestión del envío."
     ]
   },
   {
     label: "Representación ante actos jurídicos y/o institucionales",
     amount: "250 €",
     details: [
-      "(1) Dependiendo de la duración y complejidad del evento el precio podría ser mayor.",
-      "(2) El precio varía según la duración, complejidad y naturaleza del evento."
+      "El precio varía según la duración, complejidad y naturaleza del evento."
     ]
   },
 ];
@@ -84,13 +82,8 @@ const prices = [
             </div>
 
             <div class="banner__r">
-              <div class="banner__text font-size-22">
-                (1) Una buena estrategia para la defensa de tus intereses es
-                la base para escoger el mejor camino para tu vida.
-              </div>
-              <br>
-              <div class="banner__text font-size-22">
-                (2) Protegemos tus derechos con estrategias legales sólidas, 
+              <div class="banner__text font-size-20">
+                Protegemos tus derechos con estrategias legales sólidas, 
                 diseñadas para ayudarte a tomar las mejores decisiones para
                 tu futuro.
               </div>
@@ -111,12 +104,8 @@ const prices = [
         </card>
         
         <card type="secondary">
-          <div class="font-size-22">
-            (1) Si necesita asesoramiento o defensa jurídica <span class="home-link" @click="openMenu">contacte con nosotros</span>
-          </div>
-
-          <div class="font-size-22">
-            (2) ¿Necesita asesoría o representación legal? <br><br><span class="home-link" @click="openMenu">Contáctenos </span>hoy mismo y reciba atención profesional y personalizada.
+          <div class="font-size-20">
+            ¿Necesita asesoría o representación legal? <br><br><span class="home-link" @click="openMenu">Contáctenos </span>hoy mismo y reciba atención profesional y personalizada.
           </div>
         </card>
 
@@ -185,11 +174,6 @@ const prices = [
     max-width: 1256px;
     align-self: center;
     padding: 32px 0px;
-    min-height: 200px;
-
-    // display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    // grid-template-rows: repeat(2, 1fr);
 
     @media only screen and (max-width : 900px) {
       grid-template-columns: 1fr;
@@ -199,7 +183,7 @@ const prices = [
   }
 
   &__l {
-    width: 50%;
+
   }
 
   &__r {
@@ -209,7 +193,7 @@ const prices = [
   &__title {
     color: #D4AF37;
     font-size: 32px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     font-family: "Playfair Display", serif;
   }
   &__subtitle {
@@ -243,7 +227,7 @@ const prices = [
 .footer {
   display: flex;
   justify-content: center;
-  padding: 32px 0px 32px 0px;
+  padding: 42px 0px 32px 0px;
   background-color: #F5F5F7;
 
   &__content {
@@ -283,7 +267,8 @@ const prices = [
     cursor: pointer;
 
     .primary {
-      color: #982655;
+      //color: #982655;
+      color: #54749c;
       text-decoration: underline;
     }
   }

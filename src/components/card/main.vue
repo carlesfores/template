@@ -32,13 +32,8 @@ const props = defineProps({
   margin-bottom: 16px;
 
   &__header {
-    max-width: 1256px;
+    max-width: 1024px;
     font-weight: 600;
-    margin-bottom: 16px;
-
-    @media only screen and (max-width : 900px) {
-      margin-bottom: 8px;
-    }
   }
 
   &__content {
@@ -46,7 +41,7 @@ const props = defineProps({
     flex-direction: column;
     gap: 32px;
     width: 100%;
-    max-width: 1256px;
+    max-width: 1024px;
     align-self: center;
   }
 
